@@ -13,10 +13,66 @@ header {
     justify-content: center;
     flex-direction: column;
     width: 100dvw;
+    height: 100vh;
     max-width: 1200px;
     padding: 20px;
     margin: 0 auto;
     height: 100dvh;
+    color: white;
+    background-color: #000;
+
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+
+.hero-text {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    background-color: #00000062;
+    padding: 20px;
+    padding-left: 250px;
+    padding-right: 200px;
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+
+}
+
+header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+
+}
+
+.cta-btn {
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    background-color: black !important;
+    color: white !important;
+    border-color: transparent !important;
+}
+
+.cta-btn:hover {
+    background-color: white !important;
+    color: black !important;
+
 }
 
 .contTextoPrincipal {
@@ -47,7 +103,7 @@ header {
     position: absolute;
     z-index: 1;
     height: 100dvh;
-    width: 100dvw;
+    width: 100%;
     top: 0;
 }
 
