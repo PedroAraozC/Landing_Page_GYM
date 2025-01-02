@@ -1,18 +1,27 @@
 import React from "react";
 import "./LandingPage.css";
 import img from "../../assets/img.png";
+import img1 from "../../assets/img1.webp";
+import seccion1 from "../../assets/seccion1.jpg";
+import seccion2 from "../../assets/seccion2.webp";
+import seccion3 from "../../assets/seccion3.jpg";
 import { Button } from "react-bootstrap";
 import Footer from "../../components/Footer/Footer.jsx";
+import NavBar from "../NavBar/NavBar.jsx";
 
 const LandingPage = () => {
   return (
     <div className="landingPage">
+      <NavBar />
       <header>
-        <h1 className="pt-5">[Beneficio directo]</h1>
-        <h1>para el usuario</h1>
-        <div className="contImagenPrincipal">
-          <img src={img} alt="Principal" className="imgPrincipal" />
+        <img src={img1} alt="Principal" className="imgPrincipal2" />
+        <div className="contTextoPrincipal">
+          <h1 className="pt-5">[Beneficio directo]</h1>
+          <h1>para el usuario</h1>
         </div>
+        {/* <div className="contImagenPrincipal">
+          <img src={img} alt="Principal" className="imgPrincipal" />
+        </div> */}
       </header>
 
       <section>
@@ -27,38 +36,40 @@ const LandingPage = () => {
           </div>
 
           <div className="seccion">
-            <img src={img} alt="Problema" className="imgSeccion" />
+            <img src={seccion1} alt="Problema" className="imgSeccion" />
             <div className="seccion-content">
-              <h5>Habla sobre el Problema</h5>
-              <p className="text-muted small">
-                Haz que el usuario visualce de forma previa como va a ser la
-                interaccion o el uso de su producto.
+              <h5>Descubre el verdadero desafío</h5>
+              <p className="text-muted seccion-descripcion">
+                Muchos de nosotros enfrentamos obstáculos cuando intentamos
+                mantenernos en forma, desde la falta de tiempo hasta rutinas
+                aburridas. Pero no tiene por qué ser así. ¡Estamos aquí para
+                cambiar eso!
               </p>
-              <Button variant="outline-secondary">[Texto Secundario]</Button>
+              {/* <Button variant="outline-secondary">[Texto Secundario]</Button> */}
             </div>
           </div>
 
           <div className="seccion">
             <div className="seccion-content">
-              <h5>Habla sobre la solucion</h5>
-              <p className="text-muted small">
-                Como usar tu producto va a hacer que la vida del usuario sea más
-                fácil o la obtención de un beneficios.
+              <h5>Un espacio diseñado para ti</h5>
+              <p className="text-muted seccion-descripcion">
+                Nuestro gimnasio combina tecnología, entrenadores expertos y un
+                ambiente motivador para transformar tu experiencia fitness. Aquí
+                no solo entrenas, ¡también encuentras tu mejor versión!
               </p>
-              <Button variant="outline-secondary">[Texto Secundario]</Button>
+              {/* <Button variant="outline-secondary">[Texto Secundario]</Button> */}
             </div>
-            <img src={img} alt="Solución" className="imgSeccion" />
+            <img src={seccion2} alt="Solución" className="imgSeccion" />
           </div>
 
           <div className="seccion">
-            <img src={img} alt="Resultado" className="imgSeccion" />
+            <img src={seccion3} alt="Resultado" className="imgSeccion" />
             <div className="seccion-content">
-              <h5>Habla sobre el resultado</h5>
-              <p className="text-muted small">
-                Habla sobretodo lo que tus usuarios podrán hacer con tu producto
-                o sus resultados, que beneficios trae y que problemas resuelve.
+              <h5>Resultados que inspiran</h5>
+              <p className="text-muted seccion-descripcion">
+              Imagina sentirte más fuerte, saludable y lleno de energía cada día. Con nosotros, alcanzarás tus metas y disfrutarás del proceso. ¿Estás listo para el cambio?
               </p>
-              <Button variant="outline-secondary">[Texto Secundario]</Button>
+              {/* <Button variant="outline-secondary">[Texto Secundario]</Button> */}
             </div>
           </div>
         </div>

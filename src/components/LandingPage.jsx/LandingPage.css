@@ -10,11 +10,18 @@
 header {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    width: 90%;
+    width: 100dvw;
     max-width: 1200px;
     padding: 20px;
     margin: 0 auto;
+    height: 100dvh;
+}
+
+.contTextoPrincipal {
+    color: white;
+    z-index: 2;
 }
 
 .contImagenPrincipal {
@@ -36,6 +43,14 @@ header {
     object-fit: cover;
 }
 
+.imgPrincipal2 {
+    position: absolute;
+    z-index: 1;
+    height: 100dvh;
+    width: 100dvw;
+    top: 0;
+}
+
 .contSeccion {
     width: 100%;
     max-width: 1200px;
@@ -44,6 +59,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2;
 }
 
 .seccion {
@@ -61,22 +77,33 @@ header {
     min-width: 300px;
 }
 
+.seccion-content h5 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: red 2px solid;
+}
+
 .imgSeccion {
-    border-radius: 20px;
+    /* border-radius: 10px; */
     width: 100%;
     max-width: 350px;
     height: auto;
     object-fit: cover;
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
 }
 
-/* Testimonials Section */
+.seccion-descripcion {
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
 .cardTestimonio {
     border: 1px solid #E9EEF1;
     border-radius: 20px;
     width: 100%;
     max-width: 350px;
     margin: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
 .cardTestimonio:hover {
