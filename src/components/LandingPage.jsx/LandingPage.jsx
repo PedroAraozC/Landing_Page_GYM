@@ -7,6 +7,7 @@ import seccion3 from "../../assets/seccion3.jpg";
 import { Button } from "react-bootstrap";
 import Footer from "../../components/Footer/Footer.jsx";
 import NavBar from "../NavBar/NavBar.jsx";
+import Mapa from "../Mapa/Mapa.jsx";
 
 const LandingPage = () => {
   return (
@@ -24,7 +25,7 @@ const LandingPage = () => {
       <section className="intro-section">
         <div className="section-header">
           <h2>Lo que nos diferencia</h2>
-          <p className="text-muted">Más que un gimnasio, una experiencia única.</p>
+          <p className="text-muted text-center">Más que un gimnasio, una experiencia única.</p>
         </div>
 
         <div className="seccion">
@@ -32,7 +33,7 @@ const LandingPage = () => {
           <div className="seccion-content">
             <h5>Descubre el verdadero desafío</h5>
             <p>
-              Muchas veces, el desafío no es solo encontrar tiempo para entrenar. Aquí, encontraras un espacio donde la motivación y la tecnología se combinan para superar cualquier obstáculo.
+              Muchas veces, el desafío no es sólo encontrar tiempo para entrenar. Aquí, encontraras un espacio donde la motivación y la tecnología se combinan para superar cualquier obstáculo.
             </p>
           </div>
         </div>
@@ -50,7 +51,7 @@ const LandingPage = () => {
         <div className="seccion">
           <img src={seccion3} alt="Resultado" className="imgSeccion" />
           <div className="seccion-content">
-            <h5>Resultados que hablan por sí solos</h5>
+            <h5>Resultados que hablan por sí sólos</h5>
             <p>
               Más fuerza, más energía, más vitalidad. Lo que logres en nuestro gimnasio transformará no solo tu cuerpo, sino tu vida.
             </p>
@@ -58,6 +59,9 @@ const LandingPage = () => {
         </div>
       </section>
 
+      <section className="testimonios-section">
+        <Mapa />
+      </section>
       <section className="testimonios-section">
         <div className="text-center mb-5">
           <p className="text-muted small">Testimonios</p>

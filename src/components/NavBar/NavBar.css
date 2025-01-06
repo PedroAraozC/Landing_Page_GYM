@@ -11,6 +11,7 @@
     top: 0;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.178);
+    min-width: 270px;
 }
 
 .logo img {
@@ -28,10 +29,12 @@
     justify-content: center;
     gap: 20px;
     height: 5dvh;
+
 }
 
 .navLinks.show {
     display: flex;
+
 }
 
 .navLinks li {
@@ -82,8 +85,19 @@
     transform: rotate(-45deg) translate(2px, -5px);
 }
 
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 
-@media screen and (max-width: 700px) {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 800px) {
     /* .navBarCont {
         background-color: red;
 
@@ -116,6 +130,7 @@
 
     .navLinks.show {
         display: flex;
+        animation: slideIn 0.3s ease forwards;
     }
 
     .navLinks li {

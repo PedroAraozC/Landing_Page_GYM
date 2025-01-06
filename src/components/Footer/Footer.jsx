@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
   faTwitter,
+  faInstagram,
   faYoutube,
-  faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import "./Footer.css";
 
@@ -12,46 +12,54 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-section about">
-          <h2 className="footer-title">Our Mission</h2>
+        {/* Sección Acerca del Gimnasio */}
+        <div className="footer-section about text-center">
+          <h2 className="footer-title">Acerca de Nosotros</h2>
           <p>
-            Empowering businesses and individuals through innovative digital
-            solutions. Your vision, our technology — together, creating the
-            future.
+            En <strong>Fitness Pro</strong>, transformamos vidas a través del
+            movimiento. Ofrecemos programas personalizados, instalaciones de
+            primer nivel y un equipo dedicado a ayudarte a alcanzar tus metas
+            fitness.
           </p>
         </div>
+
+        {/* Sección de Enlaces */}
         <div className="footer-section links">
-          <h2 className="footer-title">Explore</h2>
+          <h2 className="footer-title">Explora</h2>
           <ul>
             <li>
-              <a href="#portfolio">Our Portfolio</a>
+              <a href="#classes">Clases y Horarios</a>
             </li>
             <li>
-              <a href="#testimonials">Client Stories</a>
+              <a href="#trainers">Nuestros Entrenadores</a>
             </li>
             <li>
-              <a href="#careers">Join Our Team</a>
+              <a href="#memberships">Planes de Membresía</a>
             </li>
             <li>
-              <a href="#blog">Blog & Insights</a>
+              <a href="#blog">Consejos de Salud</a>
             </li>
           </ul>
         </div>
-        <div className="footer-section contact">
-          <h2 className="footer-title">Get in Touch</h2>
+
+        {/* Sección de Contacto */}
+        <div className="footer-section contact text-center">
+          <h2 className="footer-title">Contáctanos</h2>
           <p>
-            <i className="fas fa-envelope"></i> support@ourcompany.com
+            <i className="fas fa-envelope"></i> contacto@fitnesspro.com
           </p>
           <p>
-            <i className="fas fa-phone"></i> +1 800 123 4567
+            <i className="fas fa-phone"></i> +54 381 555 1234
           </p>
           <p>
-            <i className="fas fa-map-marker-alt"></i> Silicon Valley,
-            California, USA
+            <i className="fas fa-map-marker-alt"></i> Av. Salud y Bienestar
+            123, San Miguel de Tucumán, Argentina
           </p>
         </div>
+
+        {/* Sección de Redes Sociales */}
         <div className="footer-section social">
-          <h2 className="footer-title">Stay Connected</h2>
+          <h2 className="footer-title">Síguenos</h2>
           <div className="social-links">
             <a
               href="https://facebook.com/"
@@ -68,25 +76,26 @@ const Footer = () => {
               <FontAwesomeIcon icon={faTwitter} />
             </a>
             <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a
               href="https://youtube.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faYoutube} />
             </a>
-            <a
-              href="https://linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faLinkedinIn} />
-            </a>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
         <p>
-          &copy; 2024 Our Company. Designed with ❤️ for innovators worldwide.
+          &copy; 2024 Fitness Pro. Diseñado con ❤️ para quienes buscan un estilo
+          de vida saludable.
         </p>
       </div>
     </footer>
