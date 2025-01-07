@@ -1,6 +1,10 @@
 .leaflet-container .leaflet-control-attribution {
     display: none;
 }
+#mapa {
+    height: 500px;
+    width: 100%;
+  }
 /* Estilo para el botón flotante de ubicación */
 .location-button {
     position: absolute;
@@ -10,6 +14,8 @@
     border: none;
     cursor: pointer;
     z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
   }
   
   /* Estilo para el ícono dentro del botón */
@@ -17,6 +23,6 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.349);
   }
   

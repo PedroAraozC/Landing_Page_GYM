@@ -59,7 +59,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="testimonios-section">
+      <section className="">
         <Mapa />
       </section>
       <section className="testimonios-section">
