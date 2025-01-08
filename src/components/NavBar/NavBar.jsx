@@ -21,16 +21,24 @@ const NavBar = () => {
       </div>
       <ul className={`navLinks ${isOpen ? "show" : ""}`}>
         <li>
-          <a href="#home">Home</a>
+          <a href="#inicio" onClick={() => setIsOpen(false)}>
+            Inicio
+          </a>
         </li>
         <li>
-          <a href="#about">About</a>
+          <a href="#about" onClick={() => setIsOpen(false)}>
+            About
+          </a>
         </li>
         <li>
-          <a href="#services">Services</a>
+          <a href="#sucursales" onClick={() => setIsOpen(false)}>
+            Sucursales
+          </a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a href="#contactanos" onClick={() => setIsOpen(false)}>
+            Contactanos
+          </a>
         </li>
       </ul>
     </nav>

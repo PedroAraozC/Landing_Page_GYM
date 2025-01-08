@@ -8,7 +8,7 @@
     padding: 20px 40.2dvw 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 0;
+    top: -1px;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.178);
     min-width: 270px;

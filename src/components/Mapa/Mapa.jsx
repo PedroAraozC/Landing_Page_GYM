@@ -56,52 +56,52 @@ const Mapa = () => {
             icon: pin,
           }).addTo(mapa).bindPopup(`
     <div style="text-align: center;">
-      <h5>Sede 1</h5>
+      <h5>Sucursal 1</h5>
       <img 
         src="src/assets/sucursal1.png" 
-        alt="Sede 1" 
+        alt="Sucursal 1" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
-      <p>Pcia de Córdoba 580, T4000DGL San Miguel de Tucumán, Tucumán</p>
+      <p>Pcia de Córdoba 580, San Miguel de Tucumán, Tucumán</p>
     </div>
   `);
           L.marker([-26.820080642697608, -65.21685157040996], {
             icon: pin,
           }).addTo(mapa).bindPopup(`
     <div style="text-align: center;">
-      <h5>Sede 2</h5>
+      <h5>Sucursal 2</h5>
       <img 
         src="src/assets/sucursal2.png" 
-        alt="Sede 2" 
+        alt="Sucursal 2" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
-      <p>Catamarca 75, T4000 San Miguel de Tucumán, Tucumán</p>
+      <p>Catamarca 75, San Miguel de Tucumán, Tucumán</p>
     </div>
   `);
           L.marker([-26.813053725414264, -65.29318583619704], {
             icon: pin,
           }).addTo(mapa).bindPopup(`
     <div style="text-align: center;">
-      <h5>Sede 3</h5>
+      <h5>Sucursal 3</h5>
       <img 
         src="src/assets/sucursal3.png" 
-        alt="Sede 3" 
+        alt="Sucursal 3" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
-      <p>Av. Aconquija 1677, T4107 Yerba Buena, Tucumán</p>
+      <p>Av. Aconquija 1677, Yerba Buena, Tucumán</p>
     </div>
   `);
           L.marker([-26.842875972440265, -65.2080494749456], {
             icon: pin,
           }).addTo(mapa).bindPopup(`
     <div style="text-align: center;">
-      <h5>Sede 4</h5>
+      <h5>Sucursal 4</h5>
       <img 
         src="src/assets/sucursal4.png" 
-        alt="Sede 4" 
+        alt="Sucursal 4" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
-      <p>Av. Gral. Roca 523, T4000 San Miguel de Tucumán, Tucumán</p>
+      <p>Av. Gral. Roca 523, San Miguel de Tucumán, Tucumán</p>
     </div>
   `);
         }

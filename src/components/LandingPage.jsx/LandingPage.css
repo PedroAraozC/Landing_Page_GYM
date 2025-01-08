@@ -237,6 +237,23 @@ section {
     min-width: 200px;
 }
 
+.btn-wp {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    right: 2dvw;
+    bottom: 4dvh;
+    z-index: 1000;
+    background-color: transparent;
+    width: 80px;
+    border-radius: 40px;
+    border: none;
+}
+
+.btn-wp img {
+    width: 74px;
+}
+
 /* Media Queries */
 @media screen and (max-width: 480px) {
     header {

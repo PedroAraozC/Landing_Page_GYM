@@ -10,7 +10,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="contactanos">
       <div className="footer-container">
         {/* Sección Acerca del Gimnasio */}
         <div className="footer-section about text-center">
@@ -94,7 +94,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p>
-          &copy; 2024 Fitness Pro. Diseñado con ❤️ para quienes buscan un estilo
+          &copy; 2025 Fitness Pro. Diseñado con ❤️ para quienes buscan un estilo
           de vida saludable.
         </p>
       </div>
