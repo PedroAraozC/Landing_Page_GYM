@@ -106,6 +106,7 @@ header h3 {
 .cta-btn:hover {
     background-color: white !important;
     color: black !important;
+    border-color: transparent !important;
 
 }
 

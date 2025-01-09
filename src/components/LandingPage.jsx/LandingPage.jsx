@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./LandingPage.css";
 import img1 from "../../assets/img1.webp";
 import seccion1 from "../../assets/seccion1.jpg";
@@ -9,8 +9,17 @@ import Footer from "../../components/Footer/Footer.jsx";
 import NavBar from "../NavBar/NavBar.jsx";
 import Mapa from "../Mapa/Mapa.jsx";
 import wp from "../../assets/wpRedondo.png";
+import Modal from "../Modal/Modal.jsx";
 
 const LandingPage = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  useEffect(() => {
+    if (!openModal) {
+      setOpenModal(false);
+    }
+  }, [openModal]);
+
   return (
     <div className="landingPage">
       <NavBar />
@@ -19,7 +28,11 @@ const LandingPage = () => {
         <div className="hero-text">
           <h1>Transforma tu vida con nosotros</h1>
           <h3>Entrena con los mejores, alcanza tus metas</h3>
-          <Button variant="primary" className="cta-btn">
+          <Button
+            variant="primary"
+            className="cta-btn"
+            onClick={() => setOpenModal(true)}
+          >
             ¡Únete ahora!
           </Button>
         </div>
@@ -129,6 +142,7 @@ const LandingPage = () => {
       >
         <img src={wp} alt="" />
       </button>
+      <Modal open={openModal} setOpen={setOpenModal} />
       <Footer />
     </div>
   );
