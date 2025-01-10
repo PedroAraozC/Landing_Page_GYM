@@ -192,7 +192,7 @@ const Modal = ({ open, setOpen }) => {
               {errors.domicilio}
             </Form.Control.Feedback>
           </Form.Group>
-          <div className="w-75 d-flex align-itmes-center" >
+          <div className="w-75 d-flex" >
             <BootstrapModal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Cerrar
