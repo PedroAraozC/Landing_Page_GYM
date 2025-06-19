@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Modal.css";
 import { Form, Button, Modal as BootstrapModal } from "react-bootstrap";
+import { Toast, ToastContainer } from "react-bootstrap";
 
 const Modal = ({ open, setOpen }) => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,9 @@ const Modal = ({ open, setOpen }) => {
     dni: "",
     domicilio: "",
   });
+  const [showToast, setShowToast] = useState(false);
+  const [toastMsg, setToastMsg] = useState("");
+  const [toastColor, setToastColor] = useState("danger");
 
   const handleClose = () => setOpen(false);
 
@@ -76,7 +80,9 @@ const Modal = ({ open, setOpen }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      alert("Formulario enviado correctamente");
+      setToastMsg("Se ha enviado el formulario correctamente👌 uno de nuestro entrenadores se contactaremos pronto 😁");
+      setShowToast(true);
+      setToastColor("success");
       // Aquí puedes hacer el registro o la llamada a la API
       setFormData({
         nombre: "",
@@ -91,120 +97,149 @@ const Modal = ({ open, setOpen }) => {
     }
   };
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
+
   return (
-    <BootstrapModal
-      show={open}
-      onHide={handleClose}
-      centered
-      aria-labelledby="modal-title"
-    >
-      <BootstrapModal.Header>
-        <BootstrapModal.Title id="modal-title">
-          ¡Gracias por tu mensaje!
-        </BootstrapModal.Title>
-      </BootstrapModal.Header>
-      <BootstrapModal.Body>
-        <p className="modal-text">
-          Nos pondremos en contacto contigo a la brevedad.
-        </p>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="formNombre">
-            <Form.Label>Nombre/s</Form.Label>
-            <Form.Control
-              type="text"
-              name="nombre"
-              placeholder="Escribe tu nombre"
-              value={formData.nombre}
-              onChange={handleChange}
-              isInvalid={!!errors.nombre}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.nombre}
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group controlId="formApellido">
-            <Form.Label>Apellido/s</Form.Label>
-            <Form.Control
-              type="text"
-              name="apellido"
-              placeholder="Escribe tu apellido"
-              value={formData.apellido}
-              onChange={handleChange}
-              isInvalid={!!errors.apellido}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.apellido}
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group controlId="formEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              type="email"
-              name="email"
-              placeholder="ejemplo@correo.com"
-              value={formData.email}
-              onChange={handleChange}
-              isInvalid={!!errors.email}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.email}
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group controlId="formTelefono">
-            <Form.Label>Teléfono</Form.Label>
-            <Form.Control
-              type="number"
-              name="telefono"
-              placeholder="1123456789"
-              value={formData.telefono}
-              onChange={handleChange}
-              isInvalid={!!errors.telefono}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.telefono}
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group controlId="formDNI">
-            <Form.Label>DNI</Form.Label>
-            <Form.Control
-              type="number"
-              name="dni"
-              placeholder="99999999"
-              value={formData.dni}
-              onChange={handleChange}
-              isInvalid={!!errors.dni}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.dni}
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group controlId="formDomicilio">
-            <Form.Label>Domicilio</Form.Label>
-            <Form.Control
-              type="text"
-              name="domicilio"
-              placeholder="Escribe tu dirección"
-              value={formData.domicilio}
-              onChange={handleChange}
-              isInvalid={!!errors.domicilio}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.domicilio}
-            </Form.Control.Feedback>
-          </Form.Group>
-          <div className="w-75 d-flex" >
-            <BootstrapModal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Cerrar
-              </Button>
-              <Button variant="primary" type="submit">
-                Enviar
-              </Button>
-            </BootstrapModal.Footer>
-          </div>
-        </Form>
-      </BootstrapModal.Body>
-    </BootstrapModal>
+    <>
+      <BootstrapModal
+        show={open}
+        onHide={handleClose}
+        centered={window.innerWidth > 768}
+        aria-labelledby="modal-title"
+        scrollable
+      >
+        <BootstrapModal.Header>
+          <BootstrapModal.Title id="modal-title">
+            ¡Gracias por tu mensaje!
+          </BootstrapModal.Title>
+        </BootstrapModal.Header>
+        <BootstrapModal.Body>
+          <p className="modal-text">
+            Nos pondremos en contacto contigo a la brevedad.
+          </p>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formNombre">
+              <Form.Label>Nombre/s</Form.Label>
+              <Form.Control
+                type="text"
+                name="nombre"
+                placeholder="Escribe tu nombre"
+                value={formData.nombre}
+                onChange={handleChange}
+                isInvalid={!!errors.nombre}
+                autoFocus
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.nombre}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId="formApellido">
+              <Form.Label>Apellido/s</Form.Label>
+              <Form.Control
+                type="text"
+                name="apellido"
+                placeholder="Escribe tu apellido"
+                value={formData.apellido}
+                onChange={handleChange}
+                isInvalid={!!errors.apellido}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.apellido}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId="formEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                placeholder="ejemplo@correo.com"
+                value={formData.email}
+                onChange={handleChange}
+                isInvalid={!!errors.email}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.email}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId="formTelefono">
+              <Form.Label>Teléfono</Form.Label>
+              <Form.Control
+                type="number"
+                name="telefono"
+                placeholder="1123456789"
+                value={formData.telefono}
+                onChange={handleChange}
+                isInvalid={!!errors.telefono}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.telefono}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId="formDNI">
+              <Form.Label>DNI</Form.Label>
+              <Form.Control
+                type="number"
+                name="dni"
+                placeholder="99999999"
+                value={formData.dni}
+                onChange={handleChange}
+                isInvalid={!!errors.dni}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.dni}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId="formDomicilio">
+              <Form.Label>Domicilio</Form.Label>
+              <Form.Control
+                type="text"
+                name="domicilio"
+                placeholder="Escribe tu dirección"
+                value={formData.domicilio}
+                onChange={handleChange}
+                isInvalid={!!errors.domicilio}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.domicilio}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <div className=" d-flex justify-self-center">
+              <BootstrapModal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Cerrar
+                </Button>
+                <Button variant="primary" type="submit">
+                  Enviar
+                </Button>
+              </BootstrapModal.Footer>
+            </div>
+          </Form>
+        </BootstrapModal.Body>
+      </BootstrapModal>
+      <ToastContainer position="top-end" className="p-3">
+        <Toast
+          onClose={() => setShowToast(false)}
+          show={showToast}
+          delay={3000}
+          autohide
+          animation={true}
+          bg={toastColor}
+          className={`pingo  toast-custom ${showToast ? "toast-in" : "toast-out"}`}
+        >
+          <Toast.Body className="text-white">{toastMsg}</Toast.Body>
+        </Toast>
+      </ToastContainer>
+    </>
   );
 };
 

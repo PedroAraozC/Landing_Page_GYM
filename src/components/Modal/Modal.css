@@ -2,21 +2,23 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100vh;
+    width: 100dvw;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1050;
+    z-index: 1;
     /* Para superponerse correctamente */
 }
 
 .modal-content {
+    overflow-y: hidden !important;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 90vw;
+    width: 90dvw;
+    max-height: 95dvh !important;
+    overflow-y: auto !important;
     max-width: 500px;
     height: auto;
     display: flex;
@@ -26,14 +28,31 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+.modal-header {
+    padding-top: 0 !important;
+    padding-bottom: 10px !important;
+}
+
 .modal-header,
 .modal-footer {
     border: none;
 }
 
+#modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-top: 10px;
+}
+
 .modal-title {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.modal-body {
+    padding: 20px;
 }
 
 .modal-body p {
@@ -59,6 +78,11 @@ label.form-label {
     border: 1px solid #ddd;
 }
 
+.modal-text {
+    margin-bottom: 10px !important;
+
+}
+
 .form-control:focus {
     .modal-content {
         background-color: #fefefe;
@@ -81,7 +105,6 @@ label.form-label {
     .modal-text {
         font-size: 1rem;
         color: #555;
-        margin-bottom: 20px;
         text-align: center;
     }
 
@@ -195,6 +218,44 @@ label.form-label {
 
 .modal-footer {
     width: 100%;
-    margin-top: 20px;
-    align-self: center;
+    align-self: center !important;
+    justify-content: space-around !important;
+    margin-top: 10px;
+}
+
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.toast-in {
+  animation: slideUp 0.4s ease forwards;
+}
+
+.toast-out {
+  animation: slideDown 0.4s ease forwards;
+}
+
+.toast-custom{
+    position: fixed;
+    right: 20px !important;
+    top: -10px !important;
 }

@@ -1,5 +1,5 @@
 .navBarCont {
-    z-index: 10000;
+    z-index: 2;
     width: 100vw;
     /* height: 8dvh; */
     display: flex;

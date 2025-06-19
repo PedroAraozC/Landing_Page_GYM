@@ -4,10 +4,14 @@ import "leaflet/dist/leaflet.css";
 import "./Mapa.css";
 import icono from "../../assets/pin-GYM.png";
 import locationIcon from "../../assets/locationIcon.png";
+import { Toast, ToastContainer } from "react-bootstrap";
 
 const Mapa = () => {
   const mapaRef = useRef(null); // Referencia para almacenar la instancia del mapa
   const [userLocation, setUserLocation] = useState(null); // Estado para almacenar la ubicación del usuario
+  const [showToast, setShowToast] = useState(false);
+  const [toastMsg, setToastMsg] = useState("");
+  const [toastColor, setToastColor] = useState("danger");
 
   useEffect(() => {
     // Obtener la ubicación actual del usuario
@@ -112,15 +116,19 @@ const Mapa = () => {
 
     const handleError = (error) => {
       console.error("Error al obtener la ubicación:", error);
-      alert(
+      setToastMsg(
         "No se pudo obtener tu ubicación. Asegúrate de que los permisos estén habilitados."
       );
+      setShowToast(true);
+      setToastColor("danger");
     };
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(location, handleError);
     } else {
-      alert("La geolocalización no está soportada por este navegador.");
+      setToastMsg("La geolocalización no está soportada por este navegador.");
+      setShowToast(true);
+      setToastColor("danger");
     }
 
     // Limpiar el mapa al desmontar el componente
@@ -142,23 +150,38 @@ const Mapa = () => {
   };
 
   return (
-    <div
-      id="mapa"
-      style={{
-        height: "500px",
-        width: "100%",
-      }}
-    >
-      {userLocation && (
-        <button onClick={centerMapOnUser} className="location-button">
-          <img
-            src="src/assets/locationIcon.png" // Asegúrate de tener un ícono para el botón flotante
-            alt="Volver a mi ubicación"
-            className="location-icon"
-          />
-        </button>
-      )}
-    </div>
+    <>
+      <div
+        id="mapa"
+        style={{
+          height: "500px",
+          width: "100%",
+        }}
+      >
+        {userLocation && (
+          <button onClick={centerMapOnUser} className="location-button">
+            <img
+              src="src/assets/locationIcon.png" // Asegúrate de tener un ícono para el botón flotante
+              alt="Volver a mi ubicación"
+              className="location-icon"
+            />
+          </button>
+        )}
+      </div>
+      <ToastContainer position="top-end" className="p-3">
+        <Toast
+          onClose={() => setShowToast(false)}
+          show={showToast}
+          delay={3000}
+          autohide
+          animation={true}
+          bg={toastColor}
+          className={`toast-custom ${showToast ? "toast-in" : "toast-out"}`}
+        >
+          <Toast.Body className="text-white">{toastMsg}</Toast.Body>
+        </Toast>
+      </ToastContainer>
+    </>
   );
 };
 

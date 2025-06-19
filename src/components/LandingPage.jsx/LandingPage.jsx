@@ -38,7 +38,7 @@ const LandingPage = () => {
         </div>
       </header>
 
-      <section className="intro-section">
+      <section className="intro-section" id="about">
         <div className="section-header">
           <h2>Lo que nos diferencia</h2>
           <p className="text-muted text-center">

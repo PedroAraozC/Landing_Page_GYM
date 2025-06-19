@@ -4,6 +4,7 @@
 #mapa {
     height: 500px;
     width: 100%;
+    z-index: 0;
   }
 /* Estilo para el botón flotante de ubicación */
 .location-button {
@@ -26,3 +27,35 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.349);
   }
   
+
+  
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.toast-in {
+  animation: slideUp 0.4s ease forwards;
+}
+
+.toast-out {
+  animation: slideDown 0.4s ease forwards;
+}
