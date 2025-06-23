@@ -135,7 +135,8 @@ const LandingPage = () => {
         className="btn-wp"
         onClick={() => {
           window.open(
-            "https://api.whatsapp.com/message/XUDJNRPNWFTQC1?autoload=1&app_absent=0&fbclid=PAY2xjawHrSAhleHRuA2FlbQIxMAABpuiqw3MWSoUaeH0_9D1h3EcDGHxV5lcYHtJ7KcpP0Wl3J0yCYvDbNyfYsA_aem_UHrFXsVkXZ7db3YDsrTU4Q",
+            //   "https://api.whatsapp.com/message/XUDJNRPNWFTQC1?autoload=1&app_absent=0&fbclid=PAY2xjawHrSAhleHRuA2FlbQIxMAABpuiqw3MWSoUaeH0_9D1h3EcDGHxV5lcYHtJ7KcpP0Wl3J0yCYvDbNyfYsA_aem_UHrFXsVkXZ7db3YDsrTU4Q"
+            "https://wa.me/543816817290",
             "_blank"
           );
         }}

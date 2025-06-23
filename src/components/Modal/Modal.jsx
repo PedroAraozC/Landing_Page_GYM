@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Modal.css";
 import { Form, Button, Modal as BootstrapModal } from "react-bootstrap";
 import { Toast, ToastContainer } from "react-bootstrap";
+import logo from "../../assets/icono.png";
 
 const Modal = ({ open, setOpen }) => {
   const [formData, setFormData] = useState({
@@ -80,7 +81,9 @@ const Modal = ({ open, setOpen }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      setToastMsg("Se ha enviado el formulario correctamente👌 uno de nuestro entrenadores se contactaremos pronto 😁");
+      setToastMsg(
+        "Se ha enviado el formulario correctamente👌 uno de nuestro entrenadores se contactaremos pronto 😁"
+      );
       setShowToast(true);
       setToastColor("success");
       // Aquí puedes hacer el registro o la llamada a la API
@@ -118,15 +121,19 @@ const Modal = ({ open, setOpen }) => {
         aria-labelledby="modal-title"
         scrollable
       >
-        <BootstrapModal.Header>
-          <BootstrapModal.Title id="modal-title">
-            ¡Gracias por tu mensaje!
+        <BootstrapModal.Header className="flex-column align-items-center">
+          <img src={logo} alt="Logo" className="logo" />
+          <BootstrapModal.Title id="modal-title2">
+            Nos pondremos en contacto con vos a la brevedad.
           </BootstrapModal.Title>
+          {/* <BootstrapModal.Title id="modal-title">
+            ¡Gracias por tu mensaje!
+          </BootstrapModal.Title> */}
         </BootstrapModal.Header>
         <BootstrapModal.Body>
-          <p className="modal-text">
+          {/* <p className="modal-text">
             Nos pondremos en contacto contigo a la brevedad.
-          </p>
+          </p> */}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formNombre">
               <Form.Label>Nombre/s</Form.Label>
@@ -234,7 +241,7 @@ const Modal = ({ open, setOpen }) => {
           autohide
           animation={true}
           bg={toastColor}
-          className={`pingo  toast-custom ${showToast ? "toast-in" : "toast-out"}`}
+          className={`toast-custom ${showToast ? "toast-in" : "toast-out"}`}
         >
           <Toast.Body className="text-white">{toastMsg}</Toast.Body>
         </Toast>
