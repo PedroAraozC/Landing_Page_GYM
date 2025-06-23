@@ -4,11 +4,11 @@ import "leaflet/dist/leaflet.css";
 import "./Mapa.css";
 import icono from "../../assets/pin-GYM.png";
 import locationIcon from "../../assets/locationIcon.png";
-import ubicacion from "src/assets/locationActualicon2.png";
-import sucursal1 from "src/assets/sucursal1.png";
-import sucursal2 from "src/assets/sucursal2.png";
-import sucursal3 from "src/assets/sucursal3.png";
-import sucursal4 from "src/assets/sucursal4.png";
+import ubicacion from "../../assets/locationActualicon2.png";
+import sucursal1 from "../../assets/sucursal1.png";
+import sucursal2 from "../../assets/sucursal2.png";
+import sucursal3 from "../../assets/sucursal3.png";
+import sucursal4 from "../../assets/sucursal4.png";
 import { Toast, ToastContainer } from "react-bootstrap";
 
 const Mapa = () => {
