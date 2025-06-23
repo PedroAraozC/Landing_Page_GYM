@@ -3,12 +3,12 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./Mapa.css";
 import icono from "../../assets/pin-GYM.png";
-import locationIcon from "../../assets/locationIcon.png";
-import ubicacion from "./assets/locationActualicon2.png";
-import sucursal1 from "./assets/sucursal1.png";
-import sucursal2 from "./assets/sucursal2.png";
-import sucursal3 from "../../assets/sucursal3.png";
-import sucursal4 from "../../assets/sucursal4.png";
+import locationIcon from "../../../public/locationIcon.png";
+import ubicacion from "../../../public/locationActualicon2.png";
+import sucursal1 from "../../../public/sucursal1.png";
+import sucursal2 from "../../../public/sucursal2.png";
+import sucursal3 from "../../../public/sucursal3.png";
+import sucursal4 from "../../../public//sucursal4.png";
 import { Toast, ToastContainer } from "react-bootstrap";
 
 const Mapa = () => {
