@@ -30,7 +30,7 @@ const Mapa = () => {
             iconUrl: "/pin-GYM.png", // Ruta directa a public/pin-GYM.png
             iconSize: [60, 70],
             iconAnchor: [30, 65],
-            popupAnchor: [5, -60],
+            popupAnchor: [20, -60],
           });
 
           const pinActual = L.icon({
