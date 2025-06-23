@@ -4,6 +4,11 @@ import "leaflet/dist/leaflet.css";
 import "./Mapa.css";
 import icono from "../../assets/pin-GYM.png";
 import locationIcon from "../../assets/locationIcon.png";
+import ubicacion from "src/assets/locationActualicon2.png";
+import sucursal1 from "src/assets/sucursal1.png";
+import sucursal2 from "src/assets/sucursal2.png";
+import sucursal3 from "src/assets/sucursal3.png";
+import sucursal4 from "src/assets/sucursal4.png";
 import { Toast, ToastContainer } from "react-bootstrap";
 
 const Mapa = () => {
@@ -33,7 +38,7 @@ const Mapa = () => {
 
           // Crear un ícono personalizado para el marcador
           const pin = L.icon({
-            iconUrl: "src/assets/pin-GYM2.png",
+            iconUrl: { icono },
             // shadowUrl: "src/assets/shadowPin2.png",
 
             iconSize: [40, 70],
@@ -41,7 +46,7 @@ const Mapa = () => {
             popupAnchor: [5, -60],
           });
           const pinActual = L.icon({
-            iconUrl: "src/assets/locationActualicon2.png",
+            iconUrl: { ubicacion },
             // shadowUrl: "src/assets/shadowPin2.png",
             iconSize: [, 50], // size of the icon
             // shadowSize: [50,88 ], // size of the shadow
@@ -62,7 +67,7 @@ const Mapa = () => {
     <div style="text-align: center;">
       <h5>Sucursal 1</h5>
       <img 
-        src="src/assets/sucursal1.png" 
+        src=${sucursal1} 
         alt="Sucursal 1" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
@@ -75,7 +80,7 @@ const Mapa = () => {
     <div style="text-align: center;">
       <h5>Sucursal 2</h5>
       <img 
-        src="src/assets/sucursal2.png" 
+        src=${sucursal2} 
         alt="Sucursal 2" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
@@ -88,7 +93,7 @@ const Mapa = () => {
     <div style="text-align: center;">
       <h5>Sucursal 3</h5>
       <img 
-        src="src/assets/sucursal3.png" 
+        src=${sucursal3} 
         alt="Sucursal 3" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
@@ -101,7 +106,7 @@ const Mapa = () => {
     <div style="text-align: center;">
       <h5>Sucursal 4</h5>
       <img 
-        src="src/assets/sucursal4.png" 
+        src=${sucursal4} 
         alt="Sucursal 4" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
@@ -131,7 +136,6 @@ const Mapa = () => {
       setToastColor("danger");
     }
 
-    // Limpiar el mapa al desmontar el componente
     return () => {
       if (mapaRef.current) {
         mapaRef.current.remove();
@@ -161,7 +165,7 @@ const Mapa = () => {
         {userLocation && (
           <button onClick={centerMapOnUser} className="location-button">
             <img
-              src="src/assets/locationIcon.png" // Asegúrate de tener un ícono para el botón flotante
+              src={locationIcon}
               alt="Volver a mi ubicación"
               className="location-icon"
             />
@@ -186,17 +190,3 @@ const Mapa = () => {
 };
 
 export default Mapa;
-
-{
-  /* {userLocation ? (
-          <button onClick={centerMapOnUser} className="location-button">
-            <img
-              src="src/assets/pin.png" // Asegúrate de tener un ícono para el botón flotante
-              alt="Volver a mi ubicación"
-              className="location-icon"
-            />
-          </button>
-        ) : (
-          <></>
-        )} */
-}
