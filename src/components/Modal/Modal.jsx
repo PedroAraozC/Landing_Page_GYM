@@ -3,6 +3,7 @@ import "./Modal.css";
 import { Form, Button, Modal as BootstrapModal } from "react-bootstrap";
 import { Toast, ToastContainer } from "react-bootstrap";
 import logo from "../../assets/icono.png";
+import emailjs from 'emailjs-com';
 
 const Modal = ({ open, setOpen }) => {
   const [formData, setFormData] = useState({
@@ -81,22 +82,49 @@ const Modal = ({ open, setOpen }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      setToastMsg(
-        "Se ha enviado el formulario correctamente👌 uno de nuestro entrenadores se contactaremos pronto 😁"
-      );
-      setShowToast(true);
-      setToastColor("success");
-      // Aquí puedes hacer el registro o la llamada a la API
-      setFormData({
-        nombre: "",
-        apellido: "",
-        email: "",
-        telefono: "",
-        dni: "",
-        domicilio: "",
-      });
-      setErrors({});
-      setOpen(false); // Cierra el modal después de enviar
+      const serviceID = "service_lxx0b68";
+      const templateID1 = "template_ack3yl1";
+      const templateID2 = "template_b33bc7p";
+
+      const templateParams = {
+        nombre: formData.nombre,
+        apellido: formData.apellido,
+        email: formData.email,
+        telefono: formData.telefono,
+        dni: formData.dni,
+        domicilio: formData.domicilio,
+      };
+
+      Promise.all([
+        emailjs.send(serviceID, templateID1, templateParams,"l4kkaHqgtxu3BIum5"),
+        emailjs.send(serviceID, templateID2, templateParams,"l4kkaHqgtxu3BIum5"),
+      ])
+        .then(() => {
+          setToastMsg(
+            "Se ha enviado el formulario correctamente👌 uno de nuestro entrenadores se contactaremos pronto 😁"
+          );
+          setShowToast(true);
+          setToastColor("success");
+
+          setFormData({
+            nombre: "",
+            apellido: "",
+            email: "",
+            telefono: "",
+            dni: "",
+            domicilio: "",
+          });
+          setErrors({});
+          setOpen(false);
+        })
+        .catch((error) => {
+          console.error("Error enviando los emails:", error);
+          setToastMsg(
+            "Ocurrió un error al enviar el formulario, por favor intentá de nuevo."
+          );
+          setShowToast(true);
+          setToastColor("danger");
+        });
     }
   };
 
