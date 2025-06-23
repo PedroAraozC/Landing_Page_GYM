@@ -67,7 +67,7 @@ const Mapa = () => {
     <div style="text-align: center;">
       <h5>Sucursal 1</h5>
       <img 
-        src=${sucursal1} 
+        src="${sucursal1}" 
         alt="Sucursal 1" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
@@ -80,7 +80,7 @@ const Mapa = () => {
     <div style="text-align: center;">
       <h5>Sucursal 2</h5>
       <img 
-        src=${sucursal2} 
+        src="${sucursal2}" 
         alt="Sucursal 2" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
@@ -93,7 +93,7 @@ const Mapa = () => {
     <div style="text-align: center;">
       <h5>Sucursal 3</h5>
       <img 
-        src=${sucursal3} 
+        src="${sucursal3}" 
         alt="Sucursal 3" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
@@ -106,7 +106,7 @@ const Mapa = () => {
     <div style="text-align: center;">
       <h5>Sucursal 4</h5>
       <img 
-        src=${sucursal4} 
+        src="${sucursal4}"
         alt="Sucursal 4" 
         style="width: 100px; height: auto; margin-top: 5px;" 
       />
