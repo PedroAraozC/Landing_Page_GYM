@@ -34,7 +34,7 @@ const Mapa = () => {
           });
 
           const pinActual = L.icon({
-            iconUrl: "/locationActualicon2.png", // Ruta directa a public/locationActualicon2.png
+            iconUrl: "/locationActualIcon2.png", // Ruta directa a public/locationActualicon2.png
             iconSize: [40, 50],
             iconAnchor: [22, 25],
             popupAnchor: [3, -15],
