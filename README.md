@@ -115,7 +115,7 @@ Landing_Page_GYM/
 Este proyecto está desplegado en **Vercel** para una experiencia óptima de usuario.
 
 ### 🔗 Demo en Vivo
-Puedes ver la aplicación funcionando en: [Landing Page GYM en Vercel](https://tu-dominio-vercel.app)
+Puedes ver la aplicación funcionando en: https://fitness-pro-gym.vercel.app/
 
 ### Deploy en Vercel
 El proyecto utiliza despliegue continuo con Vercel:
@@ -144,7 +144,8 @@ Las contribuciones son bienvenidas. Para contribuir:
 
 **Pedro Araoz**
 - GitHub: [@PedroAraozC](https://github.com/PedroAraozC)
-
+- LinkdIn: [@PedroAraozC](https://www.linkedin.com/in/pedro-araoz-colombres/)
+  
 ## 🙏 Agradecimientos
 
 - Inspiración en diseños modernos de fitness
