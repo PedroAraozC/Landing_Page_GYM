@@ -28,8 +28,8 @@ const Mapa = () => {
           // Usar rutas directas - NO imports
           const pin = L.icon({
             iconUrl: "/pin-GYM.png", // Ruta directa a public/pin-GYM.png
-            iconSize: [40, 70],
-            iconAnchor: [15, 65],
+            iconSize: [60, 70],
+            iconAnchor: [30, 65],
             popupAnchor: [5, -60],
           });
 
