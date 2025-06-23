@@ -38,7 +38,7 @@ const Mapa = () => {
 
           // Crear un ícono personalizado para el marcador
           const pin = L.icon({
-            iconUrl: { icono },
+            iconUrl: icono,
             // shadowUrl: "src/assets/shadowPin2.png",
 
             iconSize: [40, 70],
@@ -46,7 +46,7 @@ const Mapa = () => {
             popupAnchor: [5, -60],
           });
           const pinActual = L.icon({
-            iconUrl: { ubicacion },
+            iconUrl: ubicacion,
             // shadowUrl: "src/assets/shadowPin2.png",
             iconSize: [, 50], // size of the icon
             // shadowSize: [50,88 ], // size of the shadow
